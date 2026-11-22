@@ -65,6 +65,9 @@ Vor jedem Push: `npm test`, `npm run build`, `npm run e2e` müssen grün sein (l
 
 ## Bekannte Grenzen
 
+- Freigegebene Postfächer (z. B. `post@sbhl.de`) brauchen `SupportsSharedFolders` im `VersionOverridesV1_1`-Block des
+  Manifests (ab Version 1.0.1.0 enthalten). Beide `VersionOverrides`-Blöcke bei Änderungen gleich halten.
+
 - PDF-Umwandlung durch Graph nur bis 2 MB Quell-HTML; darüber ohne Bilder (Hinweis im Ergebnis).
 - `.eml` braucht Mailbox 1.14; ältere Clients speichern nur PDF und Anlagen.
 - Per Drag-and-drop angehängte Mails liefert Office.js im Web/neuen Outlook nicht.
