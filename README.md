@@ -54,5 +54,22 @@ Aufbau: `src/host.ts` (alle Office.js-Zugriffe, Demo-Host), `src/core/` (Logik o
    `https://login.microsoftonline.com/<Mandanten-ID>` setzen.
 3. **Hosting**: Repository `outlook-mail-ablage` (öffentlich) anlegen, unter Settings › Pages „GitHub Actions" wählen.
    Der Workflow `deploy.yml` baut und veröffentlicht nach `https://hendriklindemann.github.io/outlook-mail-ablage/`.
-4. **Installation** per Exchange Online PowerShell mit `dist/manifest.xml` von der veröffentlichten Seite:
-   `New-App -Mailbox <Postfach> -FileData ([System.IO.File]::ReadAllBytes("<Pfad>\manifest.xml"))`
+4. **Installation für ein Postfach** (Test) per Exchange Online PowerShell:
+   `New-App -Mailbox <Postfach> -Url "https://hendriklindemann.github.io/outlook-mail-ablage/manifest.xml"`
+
+## Verteilung an mehrere Benutzer
+
+`scripts/verteilen.ps1` installiert das Add-in als Organisations-Add-in (PowerShell 7 mit Modul
+`ExchangeOnlineManagement`). Es entfernt vorher persönliche Installationen der Benutzer und eine ältere
+Organisations-Installation, damit das Add-in nicht doppelt erscheint. Erst mit `-WhatIf` prüfen:
+
+```powershell
+.\scripts\verteilen.ps1 -Benutzer "hendrik.lindemann@sbhl.de","kollegin@sbhl.de" -WhatIf
+.\scripts\verteilen.ps1 -Benutzer "hendrik.lindemann@sbhl.de","kollegin@sbhl.de"
+.\scripts\verteilen.ps1 -Alle -PersoenlichEntfernen "hendrik.lindemann@sbhl.de"
+```
+
+- Die Administratorzustimmung in Entra gilt für alle Benutzer; neue Benutzer brauchen nichts weiter.
+- Code-Änderungen erreichen alle Benutzer automatisch über GitHub Pages. Nur nach einer Manifest-Änderung
+  (Version erhöhen) das Skript erneut mit denselben Parametern ausführen.
+- Bis das Add-in bei allen erscheint, können einige Stunden bis zwei Tage vergehen.

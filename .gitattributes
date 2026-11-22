@@ -1,2 +1,8 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Textdateien erkennen und einheitlich mit LF speichern (auch im Arbeitsordner unter Windows)
+* text=auto eol=lf
+
+# Windows-Skripte mit CRLF
+*.ps1 text eol=crlf
+
+# Binärdateien nicht anfassen
+*.png binary
