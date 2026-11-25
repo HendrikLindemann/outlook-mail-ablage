@@ -96,5 +96,5 @@ if ($PSCmdlet.ShouldProcess($ziel, "Mail-Ablage als Organisations-Add-in install
     New-App @params | Format-Table DisplayName, AppVersion, Enabled, ProvidedTo, DefaultStateForUser -AutoSize
     Write-Host "Installiert für: $ziel"
     Write-Host "Kontrolle: Get-App -OrganizationApp | Format-Table DisplayName,AppVersion,ProvidedTo,UserList"
-    Write-Host "Hinweis: Bis das Add-in bei allen Benutzern erscheint, können einige Stunden bis zwei Tage vergehen."
+    Write-Host "Hinweis: Bis das Add-in bei allen Benutzern erscheint, können bis zu 72 Stunden vergehen (auch für Updates)."
 }

@@ -72,4 +72,4 @@ Organisations-Installation, damit das Add-in nicht doppelt erscheint. Erst mit `
 - Die Administratorzustimmung in Entra gilt für alle Benutzer; neue Benutzer brauchen nichts weiter.
 - Code-Änderungen erreichen alle Benutzer automatisch über GitHub Pages. Nur nach einer Manifest-Änderung
   (Version erhöhen) das Skript erneut mit denselben Parametern ausführen.
-- Bis das Add-in bei allen erscheint, können einige Stunden bis zwei Tage vergehen.
+- Neue Add-ins und Updates erreichen die Benutzer laut Microsoft erst nach bis zu 72 Stunden.

@@ -59,7 +59,8 @@ Vor jedem Push: `npm test`, `npm run build`, `npm run e2e` müssen grün sein (l
    ```powershell
    .\scripts\verteilen.ps1 -Alle
    ```
-5. Sichtbarkeit bei allen kann Stunden bis zwei Tage dauern – nicht vorschnell erneut installieren.
+5. Neue Add-ins und Updates erreichen die Postfächer laut Microsoft erst nach **bis zu 72 Stunden** (auch
+   `Get-App -Mailbox` zeigt so lange den alten Stand). In dieser Zeit nichts neu installieren – das startet die Frist neu.
 
 **Graph-Berechtigungen** zusätzlich: in Entra unter App-Registrierungen › Mail-Ablage › API-Berechtigungen ergänzen und Administratorzustimmung erteilen; Bereiche in `src/drive/auth.ts` (`SCOPES`) anpassen.
 
