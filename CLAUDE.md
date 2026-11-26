@@ -74,7 +74,8 @@ Vor jedem Push: `npm test`, `npm run build`, `npm run e2e` müssen grün sein (l
 - Per Drag-and-drop angehängte Mails liefert Office.js im Web/neuen Outlook nicht.
 - Kein Zugriff auf lokale Laufwerke oder Explorer-Fenster (Web-Add-in); lokal nur über OneDrive-Synchronisierung.
 
-## Stand (21.11.2026)
+## Stand (26.11.2026)
 
-Live getestet in Outlook im Web: OneDrive-Ablage, PDF, EML, Anlagen. Offen: SharePoint-Ablage live, Anzeige im
-klassischen Outlook nach der Verteilung.
+Live getestet in Outlook im Web: OneDrive-Ablage, PDF, EML, Anlagen. Version 1.0.1.0 (SupportsSharedFolders) am
+22.11. an alle verteilt; in den Postfächern erst nach rund 72 Stunden angekommen. Offen: SharePoint-Ablage live,
+Anzeige in `post@sbhl.de` und im klassischen Outlook prüfen.
